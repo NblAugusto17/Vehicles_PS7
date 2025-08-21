@@ -73,3 +73,6 @@ La app fue desarrollada con **Streamlit** y utiliza **Plotly** para los gráfico
 │               └── if st.button("Desplegar", key="btn_ram")
 │                     └── px.scatter(...) → st.plotly_chart(fig)
 ```
+---
+## Enlace de la aplicación
+La app web está desplegada en Render: [Abrir app](https://eda-vehicles-ps7.onrender.com)
