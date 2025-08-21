@@ -22,7 +22,7 @@ La app fue desarrollada con **Streamlit** y utiliza **Plotly** para los gráfico
   Visualiza la proporción de vehículos según su tipo de combustible.
 
 * **Scatter Plot: Precio vs Kilometraje (Top 3 Modelos más relevantes)**
-  Permite explorar la relación entre precio y kilometraje para los modelos más representativos (Ford F-150, Chevrolet Silverado 1500 y RAM 1500). El usuario puede seleccionar cuál modelo desea visualizar mediante checkboxes.
+  Permite explorar la relación entre precio y kilometraje para los modelos más representativos (Ford F-150, Chevrolet Silverado 1500 y RAM 1500). El usuario puede seleccionar cuál modelo desea visualizar mediante Radio Buttons.
 
 ## Estructura de la App
 
@@ -57,18 +57,19 @@ La app fue desarrollada con **Streamlit** y utiliza **Plotly** para los gráfico
 │   │           └── px.pie(...) → st.plotly_chart(fig)
 │   │
 │   └── "Scatter Plot: Precio vs Kilometraje (Top 3 Modelos más relevantes)"
+|         ├── Selector de opciones tipo: modelo = st.radio(3 modelos)
 │         ├── Definición de máscaras booleanas
 │         ├── Subsets de datos: f150, silverado, ram
 │         │
-│         ├── st.checkbox("Ford F-150")
+│         ├── if modelo == 'Ford - F150':
 │         │     └── if st.button("Desplegar", key="btn_f150")
 │         │           └── px.scatter(...) → st.plotly_chart(fig)
 │         │
-│         ├── st.checkbox("Chevrolet Silverado 1500")
+│         ├── if modelo == 'Chevrolet Silverado 1500':
 │         │     └── if st.button("Desplegar", key="btn_silverado")
 │         │           └── px.scatter(...) → st.plotly_chart(fig)
 │         │
-│         └── st.checkbox("RAM 1500")
+│         └── if modelo == 'RAM 1500':
 │               └── if st.button("Desplegar", key="btn_ram")
 │                     └── px.scatter(...) → st.plotly_chart(fig)
 ```

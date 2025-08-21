@@ -126,6 +126,16 @@ if option == "Pie Chart: Distribución de Tipo de Combustible":
 # === Scatter Plot: Precio vs Kilometraje (Top 3 Modelos más relevantes) ===
 if option == "Scatter Plot: Precio vs Kilometraje (Top 3 Modelos más relevantes)":
 
+    modelo = st.radio(
+        "Selecciona un Modelo:",
+        [
+            'Ford - F150',
+            'Chevrolet Silverado 1500',
+            'RAM 1500'
+        ],
+        index=None
+    )
+
     # Máscaras booleanas (filtrado por Marca y Modelo)
     BM_model_f150 = df_vehicles['model'] == 'ford f-150'
     BM_model_silverado_1500 = df_vehicles['model'] == 'chevrolet silverado 1500'
@@ -137,7 +147,7 @@ if option == "Scatter Plot: Precio vs Kilometraje (Top 3 Modelos más relevantes
     ram_1500_data = df_vehicles[BM_model_ram_1500]
 
     # Ford F150
-    if st.checkbox("Ford - F150"):
+    if modelo == 'Ford - F150':
 
         if st.button('Desplegar', key="btn_f150"):
 
@@ -175,7 +185,7 @@ if option == "Scatter Plot: Precio vs Kilometraje (Top 3 Modelos más relevantes
             st.plotly_chart(fig)
 
     # Chevrolet Silverado 1500
-    if st.checkbox("Chevrolet Silverado 1500"):
+    if modelo == 'Chevrolet Silverado 1500':
 
         if st.button('Desplegar', key="btn_silverado"):
 
@@ -202,7 +212,7 @@ if option == "Scatter Plot: Precio vs Kilometraje (Top 3 Modelos más relevantes
             st.plotly_chart(fig)
 
     # RAM 1500
-    if st.checkbox("RAM 1500"):
+    if modelo == 'RAM 1500':
 
         if st.button('Desplegar', key="btn_ram"):
 
