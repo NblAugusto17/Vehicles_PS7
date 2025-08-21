@@ -203,6 +203,13 @@ if option == "Scatter Plot: Precio vs Kilometraje (Top 3 Modelos más relevantes
             fig.update_xaxes(
                 tickformat=',',
                 tickprefix='',
+                ticksuffix=' Km',
+                ticks='outside'
+            )
+
+            fig.update_yaxes(
+                tickformat=',',
+                tickprefix='',
                 ticksuffix=' USD',
                 ticks='outside'
             )
